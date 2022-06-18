@@ -1,0 +1,189 @@
+<script defer src="/js/map.js"></script>
+<script defer src="./js/editOurContacts.js"></script>
+
+<div class="wrapper">
+  <header class="header">
+    {{> header}}
+  </header>
+  <div class="main-page">
+    {{> mainPage}}
+  </div>
+  {{#unless adminId}}
+  <div>
+    <div class="main-order">
+      <a href="#order">получить консультацию</a>
+    </div>
+  </div>
+  {{/unless}}
+  <a name="models"></a>
+  <div class="model-order-main">
+    <div class="model-signed">
+      <p>Модели</p>
+    </div>
+    {{#if adminId}}
+    <div id="modelDiv" class="modelDiv-admin">
+      {{#each allModels}}
+      <div data-watch class="model-signed">
+        <img class="watchImg" src="{{img}}" alt="watch">
+        <h4>{{model_name}}</h4>
+        <button data-danger={{id}} type="button" class="btn-danger btn">Удалить</button>
+      </div>
+      {{/each}}
+    </div>
+
+    {{else}}
+    <div id="modelDiv" class="modelDiv">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {{#each allModels}}
+          <div data-watch class="swiper-slide">
+            <img class="watchImg" src="{{img}}" alt="watch">
+            <h4>{{model_name}}</h4>
+          </div>
+          {{/each}}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    {{/if}}
+  </div> {{!-- <div id="modelDiv" class="modelDiv-admin">
+    {{#each allModels}}
+    <div data-watch class="watch-card">
+      <img class="watchImgAdmin" src="{{img}}" alt="watch">
+      <h4>{{model_name}}</h4>
+      <button data-danger={{id}} type="button" class="btn-danger btn">Удалить</button>
+    </div>
+    {{/each}}
+  </div> --}}
+
+</div>
+
+{{#if adminId}}
+{{!-- <div class="postForm">
+  <p>Добавление моделей в "карусель"</p>
+  <form id="postForm" name="postForm" method="post" action="/newWatch" enctype="multipart/form-data">
+    <div class="create-watch">
+      <div class="mb-3">
+        <label for="exampleTite" class="form-label">Модель часов</label>
+        <input name="model_name" type="text" class="form-control" id="exampleTite" aria-describedby="exampleTite">
+      </div>
+      <div class="mb-3">
+        <label for="exampleImage" class="form-label">Изображение</label>
+        <input name="img" type="file" class="form-control" id="exampleImage" accept="image/*">
+      </div>
+      <div class="button">
+        <button type="submit" class="btn btn-create-watch">Загрузить на страницу</button>
+      </div>
+    </div>
+  </form>
+</div> --}}
+<div class="contact-block">
+  <div class="form-contact">
+    <div class="text-form">Добавить модель</div>
+  <form id="postForm" name="postForm" method="post" action="/newWatch" enctype="multipart/form-data">
+    <div class="create-watch">
+      <div class="mb-3">
+        {{!-- <label for="exampleTite" class="form-label">Модель часов</label> --}}
+        <input name="model_name" type="text" placeholder="Модель часов" class="form-control" id="exampleTite" aria-describedby="exampleTite">
+      </div>
+      <div class="mb-3">
+        {{!-- <label for="exampleImage" class="form-label">Изображение</label> --}}
+        <input name="img" type="file" placeholder="Изображение" class="form-control" id="exampleImage" accept="image/*">
+      </div>
+      <div class="button-contact">
+        <button type="submit" class="btn btn-create-watch">Загрузить на страницу</button>
+      </div>
+    </div>
+  </form>
+</div>
+ <div class="image-contact-block">
+    <img class="image-watch" src="/images/watch-block.png" alt="Часы ручной работы от Wira Watch">
+  </div>
+</div>
+{{/if}}
+
+{{#unless adminId}}
+<div>
+  <a name="order"></a>
+  {{> form}}
+</div>
+{{/unless}}
+
+<div class="ourContacts">
+
+  <div class="ourContacts-text">
+    <p>Салон часов ручной работы "WIRA WATCH"</p>
+    <p>{{contacts.adress}}</p>
+    <p>Наш <a href="{{host}}/api/">API</a></p>
+    <div class="social">
+      <div class="instagram">
+        <a href="https://www.instagram.com/{{contacts.inst}}" target="_blank">
+          <i class="fa fa-instagram fa-2x"></i>
+        </a>
+      </div>
+      <div class="telegram">
+        <a href="https://www.t.me/{{contacts.tlg}}" target="_blank">
+          <i class="fa fa-paper-plane fa-2x"></i>
+        </a>
+      </div>
+      <div class="whatsapp">
+        <a href="https://www.wa.me/{{contacts.wa}}" target="_blank">
+          <i class="fa fa-whatsapp fa-2x"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="map-test" class="map"></div>
+</div>
+
+{{#if adminId}}
+<div style="background:#1a1a1a">
+  <br>
+  <form id="contactsForm" name="contactsForm" method="put" action="/admin/editContacts">
+    <div class="mb-3">
+      <input name="adress" type="text" class="form-control" placeholder="Адрес" id="exampleTite"
+        aria-describedby="exampleTite">
+    </div>
+    <div class="mb-3">
+      <input name="tel" type="text" class="form-control" placeholder="Телефон" id="exampleImage">
+    </div>
+    <div class="mb-3">
+      <input name="tlg" type="text" class="form-control" placeholder="Telegram" id="exampleImage">
+    </div>
+    <div class="mb-3">
+      <input name="inst" type="text" class="form-control" placeholder="Instagram" id="exampleImage">
+    </div>
+    <button type="submit" class="btn btn-primary">Редактировать данные</button>
+  </form>
+</div>
+{{!-- <div class="contact-block">
+  <div class="form-contact">
+    <div class="text-form">Изменить контакты</div>
+  <form id="contactsForm" name="contactsForm" method="put" action="/admin/editContacts">
+    <div class="mb-3">
+      <input name="adress" type="text" class="form-control" placeholder="Адрес" id="exampleTite"
+        aria-describedby="exampleTite">
+    </div>
+    <div class="mb-3">
+      <input name="tel" type="text" class="form-control" placeholder="Телефон" id="exampleImage">
+    </div>
+    <div class="mb-3">
+      <input name="tlg" type="text" class="form-control" placeholder="Telegram" id="exampleImage">
+    </div>
+    <div class="mb-3">
+      <input name="inst" type="text" class="form-control" placeholder="Instagram" id="exampleImage">
+    </div>
+    <button type="submit" class="btn btn-primary">Редактировать данные</button>
+  </form>
+</div> --}}
+{{/if}}
+<br>
+<a name="contacts"></a>
+
+
+<footer class="footer">
+  <div class="copy">
+    <p>&copy; Wira Watch 2022. Все права защищены.</p>
+  </div>
+</footer>

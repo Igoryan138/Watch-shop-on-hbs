@@ -1,0 +1,126 @@
+{{#if adminId}}
+<script defer src="./js/adminscript.js"></script>
+<div id="linkAdmin" class="col">
+  <a class="nav-link" href="/logout">Logout</a>
+  <a id="createOrdersList" class="nav-link" href="/admin/saveOrders">Сформировать список заявок</a>
+  <a class="nav-link" href="/">На главную</a>
+  <div id="changeData">
+    <details>
+      <summary>Изменить данные админа</summary>
+      <div id="getKey" class="col-auto">
+        <button>Получить код для смены данных</button>
+      </div>
+      <form id="changeForm" method="POST" action="admin/changeData">
+        <div class="g-3 align-items-center">
+          <div class="">
+            <label for="changeEmail" class="">Email</label>
+          </div>
+          <div class="">
+            <input type="email" name="email" id="changeEmail" class="">
+          </div>
+          <div class="">
+            <label for="changePassword" class="">Пароль</label>
+          </div>
+          <div class="">
+            <input type="password" name="password" id="changePassword" class="" aria-describedby="passwordHelpInline">
+          </div>
+          <div class="">
+            <label for="passwordAgain" class="">Пароль повторно</label>
+          </div>
+          <div class="">
+            <input type="password" name="passwordAgain" id="passwordAgain" class="">
+          </div>
+          <div class="">
+            <label for="inputKey" class="">Введите код</label>
+          </div>
+          <div class="">
+            <input name="inputKey" id="inputKey" class="">
+          </div>
+          <div class="">
+            <button type="submit">Изменить данные</button>
+          </div>
+        </div>
+      </form>
+    </details>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row-main row">
+    <div class="col">
+      Имя
+    </div>
+    <div class="col">
+      Почта
+    </div>
+    <div class="col">
+      Телефон
+    </div>
+    <div class="col">
+      Эскиз
+    </div>
+    <div class="col">
+      Статус
+    </div>
+    <div class="col">
+      Дата создания
+    </div>
+  </div>
+  <div class="container_status">
+    {{#each contacts}}
+    <div class="row">
+      <div class="col">
+        {{this.contact_name}}
+      </div>
+      <div class="col">
+        {{this.email}}
+      </div>
+      <div class="col">
+        {{this.phone}}
+      </div>
+      <div class="col">
+        <a href="{{this.scetch}}" download>
+          <img class="watchImgAdmin" src="{{this.scetch}}" alt="watch">
+        </a>
+      </div>
+      <div id="statusCheckBox" class="col col-status">
+        <select id="select_{{this.id}}" class="form-select main-status">
+          <option id="status_{{this.id}}" class="option-text" selected>{{this.status}}</option>
+          <option class="option-text"> Получен </option>
+          <option class="option-text"> В работе </option>
+          <option class="option-text"> Завершен </option>
+        </select>
+        <button data-id={{this.id}} type="button" class="btn btn-success btn-change">Изменить статус</button>
+      </div>
+      <div class="col">
+        {{this.createdAt}}
+      </div>
+    </div>
+
+    {{/each}}
+  </div>
+</div>
+{{else}}
+<script defer src="./js/forgotPass.js"></script>
+<div class="col g-3 align-items-center">
+<form method="POST" action="/login">
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="inputPassword" class="col-form-label">Пароль</label>
+    </div>
+    <div class="col-auto">
+      <input type="password" name="password" id="inputPassword" class="form-control"
+        aria-describedby="passwordHelpInline">
+    </div>
+    <div class="col-auto">
+      <button type="submit">Войти</button>
+    </div>
+  </div>
+</form>
+  <span>
+    <button id="forgotPass" class="">Восстановить пароль.</button>
+    <a class="nav-link" href="/">На главную</a>
+    </span>
+  
+</div>
+{{/if}}

@@ -1,0 +1,38 @@
+<script defer src="/js/formContact.js"></script>
+<div class="contact-block">
+  <div class="form-contact">
+    <div class="text-form">Оставить заявку</div>
+    <form id="formContact" action="/form" method="POST" enctype="multipart/form-data">
+      <div>
+        {{!-- <label for="name">Имя:</label> <br> --}}
+        <input type="text" required placeholder="Имя" id="name" name="contact_name">
+      </div>
+      <br>
+      <div>
+        {{!-- <label for="email">E-mail:</label> <br> --}}
+        <input type="email" required placeholder="E-mail" id="mail" name="email">
+      </div>
+      <br>
+      <div>
+        {{!-- <label for="phone">Телефон (необязательно):</label> <br> --}}
+        <input type="tel" placeholder="Телефон" id="phone" name="phone">
+      </div>
+      <br>
+      <div>
+        <label id="label-download" for="scetch">Загрузите эскиз (по желанию):</label> <br>
+        <input type="file" id="upload-file" name="scetch" accept="image/*">
+        {{!-- <button id="upload-btn">Загрузить эскиз</button>
+    <span id="upload-text">Файл не выбран</span> --}}
+      </div>
+      <br>
+      <div class="button-contact">
+        <button id="button-contact" type="submit">Получить консультацию</button>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="image-contact-block">
+    <img class="image-watch" src="/images/watch-block.png" alt="Часы ручной работы от Wira Watch">
+  </div>
+</div>

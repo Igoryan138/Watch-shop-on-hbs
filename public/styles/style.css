@@ -1,0 +1,761 @@
+/*Обнуление*/
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,*:before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+/*--------------------*/
+
+body {
+    height: 100%;
+    line-height: 1;
+    font-size: 16px;
+    color: #F9F6F3;
+    font-family: Consolas SansSerif;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h4 {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 118.2%;
+    color: #000000;
+}
+
+.balloon h3 { /* это для надписи на карте */
+  font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 118.2%;
+    color: #000000;
+}
+
+.header {
+    background-color: #F9F6F3;
+    min-width: 100%;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #F9F6F3;
+    justify-content: center;
+    align-items: center;
+    margin: -300px 0 0 0;
+}
+
+.nav {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+
+.nav a{
+    display: block;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 118.2%;
+    color: #000000;
+}
+
+.nav-link {
+    padding: 20px 50px;
+    align-self: flex-start;
+    margin: 20px 0;
+}
+
+.nav-link {
+    color: #000000;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+}
+
+.align-items-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    justify-content: center;
+    justify-items: center;
+}
+
+.row {
+    height: 200px;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.row-main {
+    height: 100px;
+}
+
+.col {
+    text-align: center;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 118.2%;
+    color: #000000;
+}
+
+.col-auto{
+  display: flex;
+}
+
+.watchImgAdmin {
+    width: 150px;
+    margin: 0 50px;
+}
+
+.model-order-main {
+    background-color: #F9F6F3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.modelDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.modelDiv-admin {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1440px;
+}
+
+.model-signed {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 118.2%;
+    color: #000000;
+    align-self: flex-start;
+}
+
+.model-signed p{
+    padding: 30px 0 0 30px;
+}
+
+.main-order {
+    background-color: #F9F6F3;
+    text-align: center;
+    margin: 50px;
+    width: 400px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.main-order a{
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 98.7%;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.swiper {
+    text-align: center;
+    width: 1600px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000000;
+}
+
+.watch-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.btn-danger {
+    width: 140px;
+    height: 60px;
+    font-size: 24px;
+    color: white;
+    text-transform: uppercase;
+    font-family: Consolas;
+    background: rgba(255, 0, 0, 0.4);
+    border: 0px;
+}
+
+.btn-danger:hover {
+    transition: 1s;
+    background: rgba(255, 0, 0, 1);
+}
+
+.btn-change {
+    color: black;
+    font-family: Consolas;
+    font-size: 22px;
+    background-color: #F9F6F3;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.btn-change:hover{
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.fullscreen-bg {
+    position: relative;
+    overflow: hidden;
+    z-index: -100;
+    height: 650px;
+    width: 100%;
+}
+
+._container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.parallax {
+    min-height: 100vh;
+}
+
+.parallax-body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50px;
+    left: 0;
+}
+
+.parallax-container {
+    margin: 30px 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+.parallax-label {
+    color: sandybrown;
+    display: flex;
+    font-size: 22px;
+    letter-spacing: 6px;
+    margin: 20px 0 30px 0;
+    align-items: center;
+    height: 100%;
+    line-height: 1;
+    font-family: Consolas;
+}
+
+.parallax-label::before {
+    flex: 0 0 70px;
+    content: '';
+    margin: 0 30px 0 0;
+    background-color: sandybrown;
+    height: 1px;
+}
+
+.parallax-title {
+    margin: 30px 0 0 0;
+    font-size: 88px;
+    height: 100%;
+    line-height: 1;
+    color: #F9F6F3;
+    font-family: SansSerif;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.parallax-images {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    z-index: 1;
+}
+
+.images-parallax {
+}
+
+.images-parallax-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.images-parallax-background,
+.images-parallax-watches-r,
+.images-parallax-watches-l,
+.images-parallax-watches-c {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+.images-parallax-background {
+    background: url("../parallax/phone.jpg") top / cover no-repeat;
+    top: 0;
+}
+.images-parallax-watches-r {
+    background: url("../parallax/Watch_r.png") top / cover no-repeat;
+    top: 10%;
+    left: -10%;
+    z-index: 3;
+}
+.images-parallax-watches-l {
+    background: url("../parallax/Watch_l.png") top / cover no-repeat;
+    top: 10%;
+    left: 10%;
+    z-index: 3;
+}
+.images-parallax-watches-c {
+    background: url("../parallax/Watch_c.png") top / cover no-repeat;
+    top: 10%;
+    z-index: 2;
+}
+
+.content {
+    background-color: #7a7c7c;
+    position: relative;
+    z-index: 2;
+}
+
+._container {
+
+}
+
+.content-container {
+}
+
+.content-title {
+    font-size: 45px;
+    margin: 0 0 30px 0;
+}
+
+.content-text {
+    font-size: 26px;
+    line-height: 150%;
+}
+
+/*.post-form {*/
+/*    margin: 40px 0;*/
+/*    text-align: center;*/
+/*    font-size: 26px;*/
+/*}*/
+
+
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.social a {
+  width: 48px;
+  height: 48px;
+  float: left;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin: 0 10px 10px 0;
+  padding: 7px;
+  color: #000;
+}
+
+.map {
+  position: relative;
+  
+  width: 100%;
+  height: 100%;
+  background: #F9F6F3;
+}
+
+.ourContacts {
+  display: flex;
+  justify-content: space-around;
+  background-color: #a4a0a0;
+  height: 50vh;
+}
+
+.ourContacts-text {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Consolas';
+  font-style: normal;
+  color: #e2e2e2;
+  background-color: #1a1a1a;
+  padding: 30px 25px 10px 25px;
+}
+
+.ourContacts-text p {
+  padding: 0 10px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  color:#7a7c7c;
+  background-color: #1a1a1a;
+}
+
+.telegram,
+.instagram,
+.whatsapp {
+    margin: 0 10px;
+    
+}
+
+.telegram a {
+    margin: 0;
+    background: #7a7c7c;
+    color: #fff;
+}
+
+.instagram a {
+    margin: 0;
+    background: #7a7c7c;
+    color: #fff;
+}
+
+.whatsapp a {
+    margin: 0;
+    background: #7a7c7c;
+    color: #fff;
+}
+
+.telegram a:hover {
+    transition: 0.5s;
+    background: #7a7c7c;
+    color: rgb(0, 0, 0);
+}
+
+.instagram a:hover {
+    transition: 0.5s;
+    background: #7a7c7c;
+    color: rgb(0, 0, 0);
+}
+
+.whatsapp a:hover {
+    transition: 0.5s;
+    background: #7a7c7c;
+    color: rgb(0, 0, 0);
+}
+
+
+.g-3 {
+    background-color: #F9F6F3;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-form-label {
+    color: black;
+    font-family: Consolas;
+    font-size: 36px;
+}
+
+.col-auto {
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 100px;
+}
+
+.button-login {
+    color: black;
+    font-family: Consolas;
+    font-size: 36px;
+    background-color: #F9F6F3;
+    padding: 20px;
+}
+
+.button-login:hover{
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.nav-admin {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: black;
+    font-family: Consolas;
+    font-size: 36px;
+}
+
+.nav-link:hover {
+    color: #8f34ff;
+}
+
+
+.col-status {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-text {
+    color: black;
+    font-family: Consolas;
+    font-size: 22px;
+    text-align: center;
+}
+
+.create-watch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+}
+
+.create-watch label {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 118.2%;
+    color: #000000;
+}
+
+.mb-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.btn-create-watch {
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 118.2%;
+    color: #000000;
+    background-color: #a4a0a0;
+    border: 1px solid black;
+}
+
+.btn-create-watch:hover {
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.postForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #a4a0a0;
+}
+
+.postForm p {
+    align-self: flex-start;
+    padding: 30px 0 0 30px;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 118.2%;
+    color: #000000;
+}
+/* Блок с формой */
+.contact-block {
+  display: flex; 
+  justify-content: space-around;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  background-color: white;
+  min-height: 650px;
+}
+
+.form-contact {
+  width: 500px;
+  padding-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-form {
+  color: black;
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+
+.button-contact button {
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 40px;
+}
+
+.form-contact input {
+  border: 1px solid black;
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  text-align: left;
+  font-size: 20px;
+}
+
+.image-contact-block {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-watch {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-contact{
+  color: blue
+}
+
+#upload-file {
+  border: none;
+}
+
+#label-download {
+  color: black;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#button-contact {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+::placeholder { 
+  color: grey;
+  font-size: 20px;
+  vertical-align: middle;
+ }
+
+
+@media (max-aspect-ratio: 3/2) {
+  .form-contact {
+    padding-top: 35px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+    .swiper {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .swiper {
+        width: 600px;
+    }
+    .parallax-title {
+        font-size: 62px;
+        text-align: center;
+    }
+    .parallax-label {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .swiper {
+        width: 400px;
+    }
+    .parallax-title {
+        font-size: 62px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .swiper {
+        width: 100px;
+    }
+    .parallax-title {
+        font-size: 62px;
+    }
+}
+
+@media (max-aspect-ratio: 3/2) {
+    .images-parallax-watches-c {
+        background-position: 50% top;
+    }
+}

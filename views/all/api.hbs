@@ -1,0 +1,27 @@
+<header>
+  {{> header}}
+</header>
+<script defer src="/js/copyText.js"></script>
+<h4>Наше API</h4>
+
+<div id="copy1">
+  <h5>Все модели(JSON)</h5>
+  <input type="text" value="{{host}}/api/all" id="apiLink">
+  <button >Скопировать</button>
+</div>
+<h5>Индивидуальные ссылки:</h5>
+<div id="allModelsAPI">
+  {{#each allModels}}
+  <div>
+  <img src="/{{img}}" alt="{{img}}">
+  <h6>Модель {{model_name}}(JSON):</h6>
+  <input type="text" value="{{source}}/api/all/{{id}}" id="in{{id}}">
+  <button id="{{id}}">Скопировать</button>
+
+  </div>
+
+  {{/each}}
+</div>
+{{!-- <footer>
+  {{> footer}}
+</footer> --}}
